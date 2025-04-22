@@ -10,7 +10,7 @@
     --gray: #cfcfcf;
     --light-gray: #dbdbdb;
     --login: orange;
-    --login-submit: orangered;
+    --login-hover: orangered;
     --submit: dodgerblue;
     --submit-hover:royalblue;
     --glass-blue: rgba(67, 116, 221, 1);
@@ -87,10 +87,20 @@
     }
 }
 
+@media screen and (max-width: 30rem ){
+    .form-container__right .form-group:last-child{
+        flex-direction: column;
+        gap: 1rem;
+    } 
+}
 @media screen and (max-width: 25rem ){
     .form__container{
         overflow-x: scroll;
     }
+    .form-container__right .form-group:last-child{
+        flex-direction: column;
+        gap: 1rem;
+    } 
 }
 
 .container__left__title,
@@ -199,6 +209,7 @@ label[for="avatar"] img:hover{
 .form-group:last-child{
     display: flex;
     justify-content: center;
+    gap: 1.5rem;
 }
 
 .btn-form{
@@ -212,7 +223,6 @@ label[for="avatar"] img:hover{
 
 .btn-form[type="submit"]{
     background-color: var(--submit);
-    margin-right: 0.9375rem;
 }
 .btn-form[type="submit"]:hover{
     color: var(--white);
@@ -224,7 +234,6 @@ label[for="avatar"] img:hover{
 
 .btn-login{
     background-color: var(--login);
-    margin-left: 0.9375rem;
 }
 .btn-login:hover{
     color: var(--white);
