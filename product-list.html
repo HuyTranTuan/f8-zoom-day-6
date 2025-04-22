@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net/">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="product-list-wrapper">
+        <!-- <div class="product-wrapper__header"> -->
+            <nav class="product-wrapper__header">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li class="dropdown">
+                        <span href="" class="dropdown-toggle">Other Demos</span>
+                        <ul class="dropdown-menu">
+                            <li><a href="">Demos 1</a></li>
+                            <li><a href="">Demos 2</a></li>
+                            <li><a href="">Demos 3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">Dashboard</a></li>
+                    <li><a href="">Cart</a></li>
+                    <li><a href="">Guest Orders</a></li>
+                    <li class="dropdown">
+                        <span href="" class="dropdown-toggle">More</span>
+                        <ul class="dropdown-menu">
+                            <li><a href="">Custom Link Templates</a></li>
+                            <li><a href="">Another Sample Menu</a></li>
+                            <li><a href="">New Menu Item</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Sample Page</a></li>
+                </ul>
+            </nav>
+        <!-- </div> -->
+        <div class="product-wrapper__body">
+            <div class="product-wrapper-body__sidebar">Sidebar</div>
+            <div class="product-wrapper-body__container">
+                <div class="body-container__filter">
+                    <h1 class="body-container__title">Product List</h1>
+                    <form class="body-container__form" action="" target="_blank" rel="noopener" method="get">
+                        <div class="form-group">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16" viewBox="0 0 30 30">
+                                <path
+                                    d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z">
+                                </path>
+                            </svg>
+                            <input type="search" name="" id="" placeholder="Search ...">
+                        </div>
+                    </form>
+                </div>
+                <div class="product-list" id="product-list">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        var products = [];
+        async function getData() {
+            const url = "https://fakestoreapi.com/products";
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`Response status: ${response.status}`);
+                }
+
+                const json = await response.json();
+                console.log(json);
+                var products = document.getElementById("product-list");
+                json.map(item => {
+                    return (
+                        products.innerHTML += `<div class="product">
+                            <img src="${item.image}" class="product-img"/>
+                                <div class="product-info">
+                                    <span class="product-title">${item.title}</span>
+                                    <p class="product-description">${item.description}</p>
+                                    <div class='product-buy'>
+                                        <span>$ ${item.price}</span>
+                                        <a href="" id="${item.id}"><img src="https://img.icons8.com/?size=30&id=59997&format=png" alt="Buy" /></a>
+                                    </div>
+                                </div>
+                                <div class="product-rating">
+                                    <span class="product-rate">Rate: ${item.rating.rate}</span>
+                                    <span class="product-count">Count: ${item.rating.count}</span>
+                                </div>
+                            </div>`
+                    )
+                })
+            } catch (error) {
+                console.error(error.message);
+            }
+        }
+
+        getData();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+</body>
+</html>

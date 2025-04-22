@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="form__container">
+        <div class="form-container__left">
+            <h1 class="container__left__title">REGISTER</h1>
+            <span>Privacy policy & Term of service</span>
+        </div>
+        <div class="form-container__right">
+            <form id="form" action="" target="_blank" rel="noopener" method="post" autocomplete="off">
+                <h2 class="container__right__title">REGISTER</h2>
+                <div class="form-group">
+                    <label class="form-group-label label-required" for="name">
+                        Name
+                    </label>
+                    <input type="text" name="name" id="name" spellcheck="false" placeholder="Enter your name" required>
+                </div>
+        
+                <div class="form-group">
+                    <label class="form-group-label label-required" for="email">
+                        Email
+                    </label>
+                    <input type="text" name="email" id="email" spellcheck="false" placeholder="Enter your email" required>
+                </div>
+        
+                <div class="form-group">
+                    <label class="form-group-label label-required" for="password">
+                        Password
+                    </label>
+                    <input type="password" name="password" id="password" spellcheck="false" placeholder="Enter your password"
+                        required>
+                </div>
+        
+                <div class="form-group">
+                    <label class="form-group-label label-required" for="confirm-password">
+                        Confirm Password
+                    </label>
+                    <input type="password" name="confirm-password" id="confirm-password" spellcheck="false"
+                        placeholder="Enter your confirm password" required>
+                </div>
+        
+                <div class="form-group">
+                    <label class="form-group-label" for="gender">Gender</label>
+        
+                    <div class="radio-group">
+                        <input type="radio" name="gender" value="male" id="female">
+                        <label for="male">Male</label>
+                    </div>
+        
+                    <div class="radio-group">
+                        <input type="radio" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </div>
+        
+                    <div class="radio-group">
+                        <input type="radio" name="gender" value="others">
+                        <label for="others">Other</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-group-label label-required" for="avatar">
+                        <img src="https://static.vecteezy.com/system/resources/previews/036/280/650/non_2x/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-illustration-vector.jpg"
+                            alt="Avatar" srcset="">
+                        <br>Choose avatar
+                    </label>
+                    <input type="file" name="avatar" id="avatar" accept=".jpg,.jpeg,.png,.svg" required />
+                </div>
+        
+                <div class="form-group">
+                    <button type="submit" class="btn-form">Submit</button>
+                    <button type="button" class="btn-form btn-login">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
