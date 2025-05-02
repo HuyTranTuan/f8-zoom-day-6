@@ -125,11 +125,11 @@
                 json.map(item => {
                     return (
                         products.innerHTML += `<div class="product">
-                            <img src="${item.image}" class="product-img"/>
+                                <a href=""><img src="${item.image}" class="product-img"/></a>
                                 <div class="product-info">
-                                    <div class="product-title">
-                                        <span>${item.title}</span>
-                                    </div>
+                                    <a href="" class="product-title">
+                                        <h2>${item.title}</h2>
+                                    </a>
                                     <p class="product-description">${item.description}</p>
                                     <div class='product-buy'>
                                         <span>$ ${item.price}</span>
